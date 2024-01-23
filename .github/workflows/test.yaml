@@ -4,6 +4,7 @@ on:
     inputs:
       flakeref:
         required: true
+      build-args:
 
 jobs:
   build:
@@ -16,6 +17,7 @@ jobs:
       uses: joinemm/nix-provenance/build-wrapper@master
       with:
         flakeref: ${{ github.event.inputs.flakeref }}
+        build-args: ${{ github.event.inputs.build-args }}
 
     - name: Preview provenance
       run: cat ${{ steps.build.outputs.provenance }} | jq .
