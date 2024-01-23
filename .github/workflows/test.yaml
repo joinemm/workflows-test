@@ -2,7 +2,7 @@ name: "Build with provenance"
 on:
   workflow_dispatch:
     inputs:
-      flakeref:
+      target:
         required: true
       build-args:
 
@@ -16,7 +16,7 @@ jobs:
       id: build
       uses: joinemm/nix-provenance/build-wrapper@master
       with:
-        flakeref: ${{ github.event.inputs.flakeref }}
+        target: ${{ github.event.inputs.flakeref }}
         build-args: ${{ github.event.inputs.build-args }}
 
     - name: Preview provenance
