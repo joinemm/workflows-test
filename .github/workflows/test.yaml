@@ -20,7 +20,7 @@ jobs:
     #   run: nix build ${{ github.event.inputs.flakeref }}
 
     - name: Get provenance
-      uses: joinemm/nix-provenance@v1
+      uses: joinemm/nix-provenance@master
       with:
         flakeref: ${{ github.event.inputs.flakeref }}
       env:
