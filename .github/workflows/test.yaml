@@ -22,7 +22,7 @@ jobs:
     - name: Get provenance
       uses: joinemm/nix-provenance@master
       with:
-        flakeref: ${{ github.event.inputs.flakeref }}
+        flakeref: "${{ github.event.inputs.flakeref }}"
       env:
         PROVENANCE_INVOCATION_ID: ${{ github.run_number }}
         PROVENANCE_BUILDER_ID: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
