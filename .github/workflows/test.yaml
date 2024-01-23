@@ -16,7 +16,7 @@ jobs:
       id: build
       uses: joinemm/nix-provenance/build-wrapper@master
       with:
-        target: ${{ github.event.inputs.flakeref }}
+        target: ${{ github.event.inputs.target }}
         build-args: ${{ github.event.inputs.build-args }}
 
     - name: Preview provenance
