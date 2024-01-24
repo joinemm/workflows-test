@@ -12,12 +12,16 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Install nix
+      uses: cachix/install-nix-action@v22
+
     - name: Build with provenance
       id: build
       uses: joinemm/nix-provenance/build-wrapper@master
       with:
-        target: ${{ github.event.inputs.target }}
+        target: ${{ github.event.inputs.target}}
         build-args: ${{ github.event.inputs.build-args }}
+        install-nix: 'false'
 
     - name: Preview provenance
       run: cat ${{ steps.build.outputs.provenance }} | jq .
