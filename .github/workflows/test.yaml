@@ -12,9 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install nix
-      uses: cachix/install-nix-action@v22
-
     - name: Build with provenance
       id: build
       uses: joinemm/nix-provenance/build-wrapper@master
