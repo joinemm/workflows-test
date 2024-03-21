@@ -13,11 +13,11 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Install nix
-      uses: cachix/install-nix-action@v22
+      uses: cachix/install-nix-action@v26
 
     - name: Build with provenance
       id: build
-      uses: joinemm/nix-provenance/build-wrapper@master
+      uses: joinemm/nix-provenance@master
       with:
         target: ${{ github.event.inputs.target}}
         build-args: ${{ github.event.inputs.build-args }}
